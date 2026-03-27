@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    sans-serif;
+  background: #0a0e1a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 550px;
+}
+
+.container {
+  background: #141824;
+  border-radius: 28px;
+  padding: 32px 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #ec489a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h3 {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.player-info {
+  background: #1e2438;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #2d3548;
+}
+
+.your-name {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.label {
+  color: #8b9dc3;
+  font-size: 0.85rem;
+}
+
+.name {
+  color: #a78bfa;
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.players-list {
+  background: #0f1320;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border: 1px solid #2d3548;
+}
+
+#playersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-card {
+  background: #1e2438;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+  border: 1px solid #2d3548;
+}
+
+.player-card.current-player {
+  background: linear-gradient(
+    135deg,
+    rgba(167, 139, 250, 0.15),
+    rgba(236, 72, 153, 0.15)
+  );
+  border-color: #a78bfa;
+}
+
+.player-name {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.badge {
+  background: #a78bfa;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #a78bfa, #ec489a);
+  color: white;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+}
+
+.start-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.4);
+}
+
+.start-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.end-btn {
+  background: #2d3748;
+  color: #fc8181;
+  border: 1px solid #fc8181;
+}
+
+.end-btn:hover {
+  background: #fc8181;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.message {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.message.info {
+  background: #2d3748;
+  color: #a0aec0;
+}
+
+.message.error {
+  background: rgba(252, 129, 129, 0.1);
+  color: #fc8181;
+  border: 1px solid #fc8181;
+}
+
+.game-container {
+  text-align: center;
+}
+
+.role-card {
+  background: linear-gradient(135deg, #1e2438, #0f1320);
+  border-radius: 32px;
+  padding: 48px 32px;
+  margin: 24px 0;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.role-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.role-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #a78bfa, #ec489a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.word-display {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 24px 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  letter-spacing: 1px;
+  word-break: break-word;
+}
+
+.role-hint {
+  color: #8b9dc3;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 24px 20px;
+  }
+
+  .role-card {
+    padding: 32px 20px;
+  }
+
+  .word-display {
+    font-size: 1.6rem;
+  }
+
+  .role-title {
+    font-size: 1.2rem;
+  }
+}
