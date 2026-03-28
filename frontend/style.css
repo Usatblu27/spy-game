@@ -35,7 +35,7 @@ h1 {
 }
 .players-info {
   width: 80%;
-  height: 600px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@ h1 {
 }
 .card {
   width: 80%;
-  height: 600px;
+  height: 500px;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
