@@ -2,248 +2,137 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
-
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    sans-serif;
-  background: #0a0e1a;
-  min-height: 100vh;
+  background: url("bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
-
 .app {
-  width: 100%;
-  max-width: 550px;
-}
-
-.container {
-  background: #141824;
-  border-radius: 28px;
-  padding: 32px 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-h1 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 32px;
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #a78bfa, #ec489a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-h3 {
-  color: #a0aec0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
-}
-
-.player-info {
-  background: #1e2438;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 24px;
-  border: 1px solid #2d3548;
-}
-
-.your-name {
+  width: 90%;
+  max-width: 500px;
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
-
-.label {
-  color: #8b9dc3;
-  font-size: 0.85rem;
+h1 {
+  color: palegreen;
+  letter-spacing: 2px;
 }
-
-.name {
-  color: #a78bfa;
-  font-size: 1.1rem;
-  font-weight: 600;
-  word-break: break-all;
+.hint {
+  color: indianred;
+  font-size: 24px;
 }
-
-.players-list {
-  background: #0f1320;
+.players-info {
+  width: 60%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #ffffff10;
+  border: 2px solid #ffffff30;
+}
+.players-count {
+  color: palegreen;
+  font-size: 30px;
+}
+.count-number {
+  color: indianred;
+  font-size: 40px;
+}
+.button {
+  padding: 15px;
+  border: none;
   border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 24px;
-  border: 1px solid #2d3548;
+  transition: all 0.3s;
+  width: 60%;
 }
-
-#playersContainer {
+.primary {
+  background-color: palegreen;
+  color: #000;
+  &:active {
+    transform: scale(0.98);
+  }
+}
+.danger {
+  background-color: indianred;
+  color: #fff;
+  &:active {
+    transform: scale(0.98);
+  }
+}
+.card {
+  width: 60%;
+  height: 400px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  &.flipped {
+    transform: rotateY(180deg);
+  }
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.player-card {
-  background: #1e2438;
-  border-radius: 12px;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  transition: all 0.2s;
-  border: 1px solid #2d3548;
-}
-
-.player-card.current-player {
-  background: linear-gradient(
-    135deg,
-    rgba(167, 139, 250, 0.15),
-    rgba(236, 72, 153, 0.15)
-  );
-  border-color: #a78bfa;
-}
-
-.player-name {
-  color: #e2e8f0;
-  font-weight: 500;
-}
-
-.badge {
-  background: #a78bfa;
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-}
-
-.btn {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 16px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-
-.start-btn {
-  background: linear-gradient(135deg, #a78bfa, #ec489a);
-  color: white;
-  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
-}
-
-.start-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(167, 139, 250, 0.4);
-}
-
-.start-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.end-btn {
-  background: #2d3748;
-  color: #fc8181;
-  border: 1px solid #fc8181;
-}
-
-.end-btn:hover {
-  background: #fc8181;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.message {
-  margin-top: 16px;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 30px;
   text-align: center;
-  font-size: 0.85rem;
+  background-color: #ffffff10;
+  border: 2px solid #ffffff30;
 }
-
-.message.info {
-  background: #2d3748;
-  color: #a0aec0;
+.card-back {
+  transform: rotateY(180deg);
 }
-
-.message.error {
-  background: rgba(252, 129, 129, 0.1);
-  color: #fc8181;
-  border: 1px solid #fc8181;
-}
-
-.game-container {
-  text-align: center;
-}
-
-.role-card {
-  background: linear-gradient(135deg, #1e2438, #0f1320);
-  border-radius: 32px;
-  padding: 48px 32px;
-  margin: 24px 0;
-  border: 1px solid rgba(167, 139, 250, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.role-icon {
+.card-icon {
   font-size: 4rem;
   margin-bottom: 20px;
 }
-
-.role-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  background: linear-gradient(135deg, #a78bfa, #ec489a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.card-text {
+  color: palegreen;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
-
-.word-display {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 24px 0;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  letter-spacing: 1px;
+.card-hint {
+  color: indianred;
+  font-size: 0.8rem;
+}
+.card-word {
+  color: palegreen;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
   word-break: break-word;
 }
-
-.role-hint {
-  color: #8b9dc3;
-  font-size: 0.9rem;
-  line-height: 1.5;
+.spy-badge {
+  color: indianred;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
-
-@media (max-width: 600px) {
-  .container {
-    padding: 24px 20px;
-  }
-
-  .role-card {
-    padding: 32px 20px;
-  }
-
-  .word-display {
-    font-size: 1.6rem;
-  }
-
-  .role-title {
-    font-size: 1.2rem;
-  }
+.spy-mission {
+  color: palegreen;
+}
+.game-hint {
+  color: indianred;
+  text-align: center;
 }
