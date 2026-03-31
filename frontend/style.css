@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 .app {
   width: 90%;
@@ -26,16 +27,14 @@ body {
   gap: 20px;
 }
 h1 {
-  color: palegreen;
   letter-spacing: 2px;
 }
 .hint {
-  color: indianred;
   font-size: 24px;
 }
 .players-info {
   width: 80%;
-  height: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,11 +43,9 @@ h1 {
   border: 2px solid #ffffff30;
 }
 .players-count {
-  color: palegreen;
   font-size: 30px;
 }
 .count-number {
-  color: indianred;
   font-size: 40px;
 }
 .button {
@@ -58,27 +55,15 @@ h1 {
   transition: all 0.3s;
   width: 80%;
 }
-.primary {
-  background-color: palegreen;
-  color: #000;
-  &:active {
-    transform: scale(0.98);
-  }
-}
-.danger {
-  background-color: indianred;
-  color: #fff;
-  &:active {
-    transform: scale(0.98);
-  }
-}
 .card {
   width: 80%;
-  height: 500px;
+  height: 550px;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  color: black;
+  font-size: 30px;
   &.flipped {
     transform: rotateY(180deg);
   }
@@ -96,43 +81,28 @@ h1 {
   align-items: center;
   padding: 30px;
   text-align: center;
-  background-color: #ffffff10;
-  border: 2px solid #ffffff30;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.card-front {
+  background-image: url("image.png");
 }
 .card-back {
   transform: rotateY(180deg);
+  background-color: rgb(220, 220, 220);
 }
 .card-icon {
   font-size: 4rem;
   margin-bottom: 20px;
 }
 .card-text {
-  color: palegreen;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 15px;
 }
-.card-hint {
-  color: indianred;
-  font-size: 0.8rem;
-}
-.card-word {
-  color: palegreen;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-  word-break: break-word;
-}
 .spy-badge {
-  color: indianred;
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 20px;
-}
-.spy-mission {
-  color: palegreen;
-}
-.game-hint {
-  color: indianred;
-  text-align: center;
 }

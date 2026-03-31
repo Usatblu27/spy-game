@@ -23,9 +23,6 @@ function renderGame() {
   return `<h1>🕵️ Миссия</h1>
           <div class="card ${isCardFlipped ? "flipped" : ""}" id="spyCard">
             <div class="card-front">
-              <div class="card-icon">🔒</div>
-              <div class="card-text">Переверните карту</div>
-              <div class="card-hint">Нажмите, чтобы открыть</div>
             </div>
             <div class="card-back">
               ${

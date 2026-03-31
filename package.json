@@ -4,7 +4,8 @@
   "description": "Spy game for company",
   "main": "server.js",
   "scripts": {
-    "start": "cd backend && node server.js"
+    "start": "cd backend && node server.js",
+    "tunnel": "ssh -R 80:localhost:3000 nokey@localhost.run"
   },
   "dependencies": {
     "express": "^4.18.2",
