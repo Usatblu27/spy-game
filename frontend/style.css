@@ -81,16 +81,13 @@ h1 {
   align-items: center;
   padding: 30px;
   text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 .card-front {
-  background-image: url("image.png");
-}
-.card-back {
-  transform: rotateY(180deg);
   background-color: rgb(220, 220, 220);
+.card-back {
+    background-color: rgb(180, 180, 180);
+
+}
 }
 .card-icon {
   font-size: 4rem;
