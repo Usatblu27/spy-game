@@ -83,10 +83,11 @@ h1 {
   text-align: center;
 }
 .card-front {
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(200, 200, 200);
 }
 .card-back {
-    background-color: rgb(180, 180, 180);
+  transform: rotateY(180deg);
+  background-color: rgb(220, 220, 220);
 }
 .card-icon {
   font-size: 4rem;
