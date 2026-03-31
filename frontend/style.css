@@ -84,10 +84,9 @@ h1 {
 }
 .card-front {
   background-color: rgb(220, 220, 220);
+}
 .card-back {
     background-color: rgb(180, 180, 180);
-
-}
 }
 .card-icon {
   font-size: 4rem;
